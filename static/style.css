@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+#navbar {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    #navbar li {
+        float: none;
+    }
+}
+
+#registrationForm {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+#registrationForm label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#registrationForm input[type="text"],
+#registrationForm input[type="tel"],
+#registrationForm input[type="email"],
+#registrationForm input[type="date"],
+#registrationForm select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#registrationForm input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+#registrationForm input[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#registrationForm input[type="submit"]:hover {
+    background-color: #003d82;
+}
+
+#registrationForm input[type="text"]:focus,
+#registrationForm input[type="tel"]:focus,
+#registrationForm input[type="email"]:focus,
+#registrationForm input[type="date"]:focus,
+#registrationForm select:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+#registrationForm input:invalid {
+    border-color: #e74c3c;
+}
+
+#registrationForm input:valid {
+    border-color: #2ecc71;
+}
+
+#registrationForm input[type="text"]:hover,
+#registrationForm input[type="tel"]:hover,
+#registrationForm input[type="email"]:hover,
+#registrationForm input[type="date"]:hover,
+#registrationForm select:hover {
+    border-color: #999;
+}
+
+#personList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.person-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+}
+
+#registrationForm input[type="submit"]:hover {
+    background-color: #003d82;
+}
+
+#registrationForm input[type="submit"]:active {
+    background-color: #002a5c;
+    transform: translateY(2px);
+}
+
+#registrationForm input[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    padding: 4px 8px;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+    font-size: 14px;
+    z-index: 20;
+}
+
+#registrationForm input[title]:focus::after,
+#registrationForm input:valid[title]::after {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .info {
+    margin-top: 15px;
+  }

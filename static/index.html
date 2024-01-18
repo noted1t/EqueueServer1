@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронная очередь</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <li onclick="onFirstScreenLoad()"><a href="#registrationForm">Запись</a></li>
+            <li onclick="onSecondScreenLoad()"><a href="#activeRecords">Активные записи</a></li>
+        </ul>
+    </nav>
+
+    <form id="registrationForm">
+        <label for="fullName">Полное имя:</label>
+        <input type="text" id="fullName" name="fullName" required pattern="^[А-Яа-яЁё]+(\s[А-Яа-яЁё]+){2}$"
+            onblur="onBlurFun()">
+
+        <label for="phone">Контактный телефон:</label>
+        <input type="tel" id="phone" name="phone" required pattern="\+7\d{10}">
+
+        <label for="email">Адрес электронной почты:</label>
+        <input type="email" id="email" name="email" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+
+        <label for="section">Секция конференции:</label>
+        <select id="section" name="section" required>
+            <option value="math">Математика</option>
+            <option value="physics">Физика</option>
+            <option value="cs">Информатика</option>
+        </select>
+
+        <label for="birthdate">Дата рождения:</label>
+        <input type="date" id="birthdate" name="birthdate">
+
+        <div><label for="report">Есть доклад:</label>
+            <input type="checkbox" id="report" name="report" onchange="toggleTopicField()">
+        </div>
+        <br />
+        <div id="topicField" style="display: none;">
+            <label for="topic">Тема доклада:</label>
+            <input type="text" id="topic" name="topic">
+        </div>
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+    <div id="personList" , style="display: none;"></div>
+</body>
+
+</html>
